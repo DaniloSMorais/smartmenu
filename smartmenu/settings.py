@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'smartmenu.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),     # usuário do banco
-        'PASSWORD': os.getenv("DB_PASSWORD"),        # senha do banco
+        'NAME': 'smart_menu',
+        'USER': 'admin',     # usuário do banco
+        'PASSWORD': 'Fatec2009123*',        # senha do banco
         'HOST': 'postgree_smart_menu',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
-        'PORT': os.getenv("DB_PORT"),                 # porta padrão do PostgreSQL
+        'PORT': '5432',                 # porta padrão do PostgreSQL
     }
 }
 
