@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'smart_menu',
         'USER': 'admin',     # usuário do banco
-        'PASSWORD': 'Fatec2009123*',        # senha do banco
+        'PASSWORD': '---',        # senha do banco
         'HOST': '212.85.1.19',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
         'PORT': '5432',                 # porta padrão do PostgreSQL
     }
