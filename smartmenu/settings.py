@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'smart_menu',
         'USER': 'admin',     # usuário do banco
         'PASSWORD': 'Fatec2009123*',        # senha do banco
-        'HOST': 'postgree_smart_menu',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
+        'HOST': '212.85.1.19',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
         'PORT': '5432',                 # porta padrão do PostgreSQL
     }
 }
