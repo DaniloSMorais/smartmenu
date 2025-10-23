@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': os.getenv("DB_NAME"),
         'USER': os.getenv("DB_USER"),     # usuário do banco
         'PASSWORD': os.getenv("DB_PASSWORD"),        # senha do banco
-        'HOST': os.getenv("DB_HOST"),  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
+        'HOST': 'postgree_smart_menu',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
         'PORT': os.getenv("DB_PORT"),                 # porta padrão do PostgreSQL
     }
 }
