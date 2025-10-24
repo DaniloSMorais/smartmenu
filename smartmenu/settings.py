@@ -26,7 +26,7 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = 'django-insecure-#d$5*bxra5$3h&9oz9ato7&f39ibelit+58vg70*6hvevv8d6i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'smart_menu',
         'USER': 'admin',     # usuário do banco
-        'PASSWORD': '---',        # senha do banco
+        'PASSWORD': 'Fatec2009123*',        # senha do banco
         'HOST': '212.85.1.19',  # ex: 'ep-round-cloud-123456-pooler.us-east-1.postgres.vercel-storage.com'
         'PORT': '5432',                 # porta padrão do PostgreSQL
     }
