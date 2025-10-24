@@ -1,26 +1,28 @@
-# Imagem base do Python
+# Usando imagem slim para produção
 FROM python:3.11-slim
 
-# Diretório de trabalho dentro do container
+# Variáveis de ambiente
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Diretório da aplicação
 WORKDIR /app
 
-# Instala dependências do sistema (necessário para psycopg2)
-RUN apt-get update && apt-get install -y libpq-dev gcc && rm -rf /var/lib/apt/lists/*
+# Dependências do sistema
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copia o arquivo de dependências
-COPY requirements.txt .
+# Copia dependências e instala
+COPY requirements.txt /app/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-# Instala dependências Python
-RUN pip install --no-cache-dir -r requirements.txt
+# Copia o projeto
+COPY . /app/
 
-# Copia todo o projeto
-COPY . .
-
-# Variáveis de ambiente para Django
-ENV PYTHONUNBUFFERED=1
-
-# Porta exposta
 EXPOSE 8000
 
-# Comando padrão
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Comando para rodar com Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "smartmenu.wsgi:application"]
