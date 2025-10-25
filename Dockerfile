@@ -20,14 +20,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia o restante do projeto
 COPY . /app/
 
-# Copia arquivos estáticos para dentro do container
-RUN python manage.py collectstatic --noinput
+# Garante permissões corretas
+RUN chmod -R 755 /app
 
+# Copia arquivos estáticos (após copiar o projeto!)
+RUN python manage.py collectstatic --noinput
 
 # Expondo porta do Gunicorn
 EXPOSE 8000
-
-
 
 # Comando para iniciar o app com Gunicorn
 CMD ["gunicorn", "smartmenu.wsgi:application", "--workers", "3", "--bind", "0.0.0.0:8000"]
